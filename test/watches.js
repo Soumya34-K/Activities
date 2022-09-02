@@ -1,3 +1,4 @@
+const { assert } = require("chai");
 
 describe('Watches page', async () => {
 
@@ -24,9 +25,17 @@ describe('Watches page', async () => {
         await link.click();
         await expect(browser).toHaveUrlContaining('/Home-Garden')
         await browser.pause(3000);
-        const footerLink = await $ ("//a[normalize-space()='Company info']")
-        await browser.pause(3000);
-        await expect(footerLink).toHaveHrefContaining('/our-company/')
+        
+    });
+
+    describe('Chai assertion ', async () => {
+
+    it('Should get the title and verify the title', async () => {
+
+       
+        assert.equal('https://www.ebay.com/',browser.getUrl())
+        assert.include('Electronics, Cars, Fashion, Collectibles & More | eBay',browser.getTitle())
+        
     });
 
  
