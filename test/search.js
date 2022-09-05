@@ -5,6 +5,11 @@ describe('ebay product search', async () => {
         await browser.url("https://www.ebay.com/");
         browser.maximizeWindow();
         await expect(browser).toHaveTitle("Electronics, Cars, Fashion, Collectibles & More | eBay");
+        let text = $("#gh-shop-a").getText();
+        console.log(text);
+        let footer= $ (".gf-legal").getText();
+        console.log(footer);
+
         
     });
 

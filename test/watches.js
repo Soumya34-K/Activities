@@ -1,6 +1,4 @@
-const { assert } = require("chai");
-
-describe('Watches page', async () => {
+describe ('Watches page', async () => {
 
     it('Should display the banner container', async () => {
 
@@ -27,17 +25,5 @@ describe('Watches page', async () => {
         await browser.pause(3000);
         
     });
-
-    describe('Chai assertion ', async () => {
-
-    it('Should get the title and verify the title', async () => {
-
-       
-        assert.equal('https://www.ebay.com/',browser.getUrl())
-        assert.include('Electronics, Cars, Fashion, Collectibles & More | eBay',browser.getTitle())
-        
-    });
-
- 
 
 });
