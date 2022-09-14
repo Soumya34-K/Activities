@@ -13,9 +13,6 @@ class internet extends Page {
         const heading = $("h1.heading").getText();
         console.log(heading);
         console.log(browser.getTitle())
-        
-        
-
     }
 
     get subHeading () {
@@ -41,24 +38,25 @@ class internet extends Page {
         return this.parent.$$("li"); 
     }
 
-    get checkbox() {
+    get getText () {
 
-        const checkbox_two = $('[type="checkbox"]:nth-child(2)'); 
-        checkbox_two.scrollIntoView(); browser.pause(3000); 
-        checkbox_two.click(); 
-        browser.pause(3000); 
+        let link = $("//a[text()='A/B Testing']");
+        link.click();
+        const text = $("//p[contains(text(),'Also known as ')]");
+        console.log(text.getText());
+
     }
-
     getLiText() {
 
         this.childElements.filter((element) => {
          console.log(element.getText());
-    });
+    })
 
-
-    }
 
 }
+
+}
+
 
 
 module.exports = new internet ();
