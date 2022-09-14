@@ -6,10 +6,10 @@ describe('Interacting with elements', async () => {
     it('Get text for elements', async () => {
 
         await InternetPage.open()
-         InternetPage.pageFooter
-         InternetPage.homePageElements
          InternetPage.pageHeader
          InternetPage.subHeading
+         InternetPage.pageFooter
+         InternetPage.getText
          InternetPage.getLiText()
          await browser.pause(3000)
         
