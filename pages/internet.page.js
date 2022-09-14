@@ -1,16 +1,27 @@
 
-class internet {
+const Page = require('./page');
 
+class internet extends Page {
+
+    open() {
+
+       return super.open('login');
+
+   }
     get pageHeader () {
 
-        let heading = $ ("h1.heading").getText();
+        const heading = $("h1.heading").getText();
         console.log(heading);
+        console.log(browser.getTitle())
+        
+        
+
     }
 
     get subHeading () {
 
         const subheading = $ ("h2").getText();
-        console.log(subheading)
+        console.log(subheading);
 
     }
 
@@ -22,22 +33,32 @@ class internet {
 
     get parent() {
         
-        return $("ul") 
+        return $("ul");
     }
 
     get childElements() { 
         
-        return this.parent.$$("li") 
+        return this.parent.$$("li"); 
     }
+
+    get checkbox() {
+
+        const checkbox_two = $('[type="checkbox"]:nth-child(2)'); 
+        checkbox_two.scrollIntoView(); browser.pause(3000); 
+        checkbox_two.click(); 
+        browser.pause(3000); 
+    }
+
     getLiText() {
 
         this.childElements.filter((element) => {
-         console.log(element.getText())
+         console.log(element.getText());
     });
-   
- 
-}
+
+
+    }
 
 }
 
-module.exports = new internet ()
+
+module.exports = new internet ();
